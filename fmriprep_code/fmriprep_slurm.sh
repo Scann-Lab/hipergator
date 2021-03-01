@@ -24,7 +24,7 @@ freesurfer_dir=FREESURFER_sed
 
 echo $freesurfer_dir/license.txt
 
+# Anatomy only
 singularity run --cleanenv -B $BIDS_dir:/data $singularity_dir $BIDS_dir $output_dir \
-participant \
---participant-label SUB_sed \
---omp-nthreads 8 --mem-mb 12000 --fs-license-file $freesurfer_dir/license.txt --anat-only
+participant --participant-label SUB_sed --omp-nthreads 8 --mem-mb 12000 \
+--fs-license-file $freesurfer_dir/license.txt --anat-only

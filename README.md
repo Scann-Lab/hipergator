@@ -4,6 +4,9 @@ This repository contains code to use for preprocessing fMRI data. This was origi
 Steps:
 1. Convert raw dicoms to BIDS compliant niftis: 
 
+   ml python
+   ml mricrogl
+
    dcm2bids_looping_script.sh, dcm2bids_example_config.json
    
    You can loop through multiple participants using dcm2bids_looping_script.sh and submit this job to slurm. The dcm2bids_config.json files must be created before you run this. An example config.json is uploaded here (dcm2bids_example_config.json) -- but you will need to check your data and make your own based on this. If participants have all the same runs in the same order, you could make just one .json file and use it for each participant/session. But, if there were errors during the scan and runs have different order numbers, you will need to make a different config.json for each participant/session. The dcm2bids_looping_script.sh was created with a different config.json file for each different subject/session. But the script can be easily altered.
